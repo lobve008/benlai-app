@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "aa",
-  "description": "s",
+  "projectname": "本来科技",
+  "description": "设备仓库",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,
