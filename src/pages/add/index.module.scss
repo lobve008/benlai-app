@@ -1,0 +1,46 @@
+.addWrap {
+  padding: 0 40px;
+
+  .textarea {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.mediePicker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px 10px;
+  margin: 0 20px;
+
+  .mediePickerItem {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .itemWrap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .del {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}

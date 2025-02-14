@@ -1,0 +1,15 @@
+
+.wrap {
+  padding: 100px 40px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 60px;
+  .nickName{
+    padding-top: 40px;
+  }
+}
