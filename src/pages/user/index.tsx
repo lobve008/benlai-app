@@ -1,9 +1,9 @@
 import Taro from "@tarojs/taro";
+import { AtAvatar, AtList, AtListItem, AtButton } from "taro-ui";
 import { useState } from "react";
-import { View } from "@tarojs/components";
+import { Button, View,  } from "@tarojs/components";
 import { UserInfo } from "./types";
 import styles from "./index.module.scss";
-import { AtAvatar , AtList, AtListItem } from "taro-ui";
 
 const LoginPage = () => {
   const [userInfo, setUserInfo] = useState<UserInfo>(
@@ -33,19 +33,37 @@ const LoginPage = () => {
     });
   };
 
+  const loginOut = () => {
+    Taro.setStorage({ key:'userInfo',data:''});
+    setUserInfo({
+      avatarUrl: "",
+      nickName: "请登录",
+    })
+  }
+
 
 
   return (
     <View className={styles.wrap}>
       <View className={styles.userInfo} onClick={handleLogin}>
-        <AtAvatar circle size="large" image={userInfo.avatarUrl}></AtAvatar>
+        <AtAvatar circle size='large' image={userInfo.avatarUrl}></AtAvatar>
         <View className={styles.nickName}>{userInfo.nickName}</View>
+        {userInfo.avatarUrl ? <View className={`${styles.loginOut} border`} onClick={loginOut}>退出登录</View> :null}
       </View>
-      <AtList>
-        <AtListItem title="添加设备" arrow="right" onClick={()=>{
+      <View className={styles.list}>
+        <View className={styles.item} onClick={() => {
           Taro.navigateTo({ url: "/pages/add/index" });
-        }} />
-      </AtList>
+        }}
+        >添加设备</View>
+        <View className={styles.item}>
+          <Button className={styles.itemBtn} openType='feedback'>
+            意见反馈
+          </Button>
+        </View>
+        <View className={styles.item}>用户协议</View>
+        <View className={styles.item}>隐私政策</View>
+        <View className={styles.item}></View>
+      </View>
     </View>
   );
 };

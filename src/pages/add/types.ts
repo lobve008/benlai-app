@@ -8,5 +8,5 @@ export interface ShebeiInfo {
   basePrice: string;
   tel: string;
   media: any[];
-  time?: string;
+  date?: string;
 }

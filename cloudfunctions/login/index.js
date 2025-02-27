@@ -16,7 +16,7 @@ exports.main = async (event) => {
 
   // 检查用户是否已存在于数据库
   const db = cloud.database()
-  const users = db.collection('users')
+  const users = db.collection('user')
   const userResult = await users.where({
     openid: wxContext.OPENID
   }).get()

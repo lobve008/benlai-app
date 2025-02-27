@@ -111,14 +111,15 @@ export default function Add() {
       name: "shebeiEdit",
       data: {
         type: 'add',
+        shebeiInfo: { ...shebeiInfo ,date: new Date().getTime()}
       },
-      success: function (response) {
-        console.log(response);
-        
+      success: function () {
+        setMediaUpdated(false)
+        Taro.navigateBack()
       },
       fail: console.error,
     });
-  }, [mediaUpdated])
+  }, [mediaUpdated, shebeiInfo])
 
 
   return (
@@ -240,8 +241,8 @@ export default function Add() {
           </View>
         </View>
 
-        <AtButton formType='submit'>提交</AtButton>
-        <AtButton formType='reset'>重置</AtButton>
+        <AtButton className={styles.btn} formType='submit'>提交</AtButton>
+        <AtButton className={styles.btn} formType='reset'>重置</AtButton>
       </AtForm>
       <AtMessage />
     </View>

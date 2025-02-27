@@ -1,9 +1,11 @@
 export default defineAppConfig({
   pages: [
-    "pages/add/index",
+    "pages/index/index",
     "pages/user/index",
     "pages/classify/index",
-    "pages/index/index",
+    "pages/add/index",
+    "pages/search/index",
+    "pages/detail/index",
   ],
   window: {
     backgroundTextStyle: "light",

@@ -1,15 +1,71 @@
-
 .wrap {
   padding: 100px 40px;
 }
 
 .userInfo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 100px 0 60px;
-  .nickName{
-    padding-top: 40px;
+  padding: 20px 0 60px;
+
+  .nickName {
+    padding-left: 20px;
+  }
+}
+
+.loginOut {
+  margin-left: auto;
+  font-size: 24px;
+  padding: 8px 24px;
+  border-radius: 8px;
+
+}
+
+.itemBtn {
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* 透明背景 */
+  padding: 0; /* 移除内边距 */
+  margin: 0; /* 移除外边距 */
+  color: inherit; /* 继承文字颜色 */
+  text-align: left;
+  line-height: 56px;
+
+  &::after {
+    content: none;
+  }
+}
+
+.list {
+  .item {
+    height: 102px;
+    line-height: 102px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid rgb(214.4, 228.4, 238.9);
+
+    .itemBtn {
+      font-size: 32px;
+      width: 100%;
+      height: 100%;
+      background-color: transparent; /* 透明背景 */
+      padding: 0; /* 移除内边距 */
+      margin: 0; /* 移除外边距 */
+      color: inherit; /* 继承文字颜色 */
+      text-align: left;
+      line-height: 102px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 24px;
+    }
   }
 }
